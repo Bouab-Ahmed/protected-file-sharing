@@ -1,0 +1,79 @@
+﻿Nom: bouab
+Prénom : ahmed
+matrécule : 181838058623
+section et groupe : L2 ACAD C G1
+
+
+RAPPORT TP 4
+
+
+1. Créer un nouvel utilisateur ayant comme nom utilisateur votre nom de famille,
+Et comme mot de passe votre prénom:
+
+
+Connecter cet utilisateur au SGBD et afficher l’utilisateur connecté:
+
+
+
+Le nouvel utilisateur (bouab) ne peut pas ce connecter au base de donnée car je lui ai pas encore créer un session de travail alor il faut creer une session de travail d’abord et reconnécter comme il est prévu dans le capture
+
+
+2. Connecter-vous à un compte administrateur de votre base de données (system par exemple).
+Accorder au nouvel utilisateur le privilège Insert dans la table Produit.
+
+
+3. En utilisant un script sql :
+- Créer un rôle "MAJ_Produit".
+- Affecter à ce rôle les privilèges :
+– Delete et Update dans la table Produit.
+– Alter dans la table Produit.
+- Assigner ce rôle à votre nouvel utilisateur.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- Lancer le script.
+
+
+
+4. Tester tous les privilèges accordés à cet utilisateur.
+
+
+
+
+
+
+
+5. Exécuter la requête : Select * From Produit; pour afficher le contenu de la table Produit.
+En cas d’échec, expliquer, corriger et réexécuter de nouveau.
+
+
+
+L’échec : le user n’a pas le privilege select 
+corréction : on doit réconnécter au sys et ajoute le privilege select to bouab 
+
+l’échec et la corréction sont prévue dans le capture
+
+
+6. Supprimer (retirer) tous les privilèges accordés à votre utilisateur.
+
+
+
+7. Supprimer cet utilisateur.
+
+
+
