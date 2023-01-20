@@ -19,6 +19,15 @@
     <input type="password" name="confirmPassword" id="confirmPassword"> -->
     <button type="submit" style="grid-template-columns: span 2;">Share</button>
   </form>
+  <% if(locals.filelink !=null) { %>
+    <div style="margin: 1rem; display: grid; grid-template-rows: auto 1fr; max-width: 500px; margin: auto;">
+      <h2 style="margin-top: 20px ;">File Uploaded</h2>
+      <p>Link: <a href="<%= locals.filelink %>">
+          <%= locals.filelink %>
+        </a>
+      </p>
+    </div>
+    <% } %>
 </body>
 
 </html>
