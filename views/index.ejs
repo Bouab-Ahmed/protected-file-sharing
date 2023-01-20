@@ -9,7 +9,8 @@
 </head>
 
 <body>
-  <form style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: auto;">
+  <form action="/upload" method="post" enctype="multipart/form-data"
+    style="display: grid; gap: .5rem; grid-template-columns: auto 1fr; max-width: 500px; margin: auto;">
     <label for="file">File :</label>
     <input type="file" name="file" id="file" required>
     <label for="password">Password</label>
