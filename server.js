@@ -5,20 +5,20 @@ const File = require('./models/File');
 const connectDB = require('./config/db');
 
 const express = require('express');
-const app = express();
-app.use(express.urlencoded({ extended: true }));
+const server = express();
+server.use(express.urlencoded({ extended: true }));
 
 const upload = multer({ dest: 'uploads' });
 
 connectDB();
 
-app.set('view engine', 'ejs');
+server.set('view engine', 'ejs');
 
-app.get('/', (req, res) => {
+server.get('/', (req, res) => {
   res.render('index');
 });
 
-app.post('/upload', upload.single('file'), async (req, res) => {
+server.post('/upload', upload.single('file'), async (req, res) => {
   const fileData = {
     path: req.file.path,
     originalName: req.file.originalname,
@@ -33,7 +33,7 @@ app.post('/upload', upload.single('file'), async (req, res) => {
   res.render('index', { filelink: `${req.headers.origin}/file/${file.id}` });
 });
 
-app.route('/file/:id').get(handlePassword).post(handlePassword);
+server.route('/file/:id').get(handlePassword).post(handlePassword);
 
 async function handlePassword(req, res) {
   const file = await File.findById(req.params.id);
@@ -59,4 +59,4 @@ async function handlePassword(req, res) {
   res.download(file.path, file.originalName);
 }
 
-app.listen(process.env.PORT);
+server.listen(process.env.PORT);
